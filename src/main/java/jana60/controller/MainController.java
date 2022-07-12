@@ -1,6 +1,6 @@
 package jana60.controller;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 import org.springframework.stereotype.Controller;
@@ -27,7 +27,7 @@ public class MainController {
 	
 	@GetMapping("/ora")
 	public String ora(Model model) {
-		String today= LocalDate.now().format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+		String today= LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm"));
 		model.addAttribute("orario", today);
 		return "time";
 	}
